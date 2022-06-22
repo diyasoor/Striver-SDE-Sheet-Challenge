@@ -1,3 +1,12 @@
+void expand(string s, int l,int r, string &ans, int & ansLen) {
+    while(l>=0 && r<s.length() && s[l]==s[r]) {
+        if(r-l+1 > ansLen) {
+            ansLen = r - l + 1;
+            ans = s.substr(l, ansLen);
+        }
+        l--; r++;
+    }
+} 
 string longestPalinSubstring(string str)
 {
     // Write your code here.
@@ -6,23 +15,9 @@ string longestPalinSubstring(string str)
     int n=str.length();
     for(int i=0;i<n;i++) {
         // for odd length
-        int l=i, r=i;
-        while(l>=0 && r<n && str[l]==str[r]) {
-            if(r-l+1 > ansLen) {
-                ansLen = r - l + 1;
-                ans = str.substr(l, ansLen);
-            }
-            l--; r++;
-        }
+        expand(str,i,i,ans,ansLen);
         // for even length
-        l=i, r=i+1;
-        while(l>=0 && r<n && str[l]==str[r]) {
-            if(r-l+1 > ansLen) {
-                ansLen = r - l + 1;
-                ans = str.substr(l, ansLen);
-            }
-            l--; r++;
-        }
+        expand(str,i,i+1,ans,ansLen);
     }
     return ans;
 }
