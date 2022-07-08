@@ -18,7 +18,7 @@ struct Node {
     Node* getNext(char ch) {
         return links[ch - 'a'];
     }
-    bool setEnd() {
+    void setEnd() {
         flag = true;
     }
     bool isEnd() {
