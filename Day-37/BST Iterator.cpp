@@ -18,6 +18,8 @@
 
 ************************************************************/
 #include<bits/stdc++.h>
+// T.C = O(H)
+// S.C = O(1)
 class BSTiterator
 {
     private: stack<TreeNode<int>*> st;
