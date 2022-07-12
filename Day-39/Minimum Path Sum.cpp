@@ -10,7 +10,7 @@ int minSumPath(vector<vector<int>>& grid) {
     return dfs(grid,0,0);
 }
 
-/* Memoization T.C=O(N*M) S.C=O(N*M)*/
+/* Memoization T.C=O(N*M) S.C=O(N*M) with ASS*/
 #include<climits>
 int dfs(vector<vector<int>>& grid, int i,int j,vector<vector<int>>& dp) {
         
