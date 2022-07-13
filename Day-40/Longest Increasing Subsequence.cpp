@@ -1,4 +1,6 @@
 #include<vector>
+// T.C = O(NxLogN)
+// S.C = O(N)
 int longestIncreasingSubsequence(int arr[], int n)
 {
     // Write Your Code here
